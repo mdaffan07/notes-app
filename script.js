@@ -6,7 +6,6 @@ const searchBar = document.getElementById("search-bar");
 
 let selectedColor = "#fff740";
 
-// pick color
 const dots = document.querySelectorAll(".color-dot");
 dots.forEach(function (dot) {
     dot.onclick = function () {
@@ -14,7 +13,6 @@ dots.forEach(function (dot) {
     }
 });
 
-// load notes from localStorage
 function getNotes() {
     let notes = localStorage.getItem("notes");
     if (notes) {
@@ -23,12 +21,10 @@ function getNotes() {
     return [];
 }
 
-// save notes
 function saveNotes(notes) {
     localStorage.setItem("notes", JSON.stringify(notes));
 }
 
-// show notes
 function showNotes() {
     let notes = getNotes();
     notesGrid.innerHTML = "";
@@ -58,7 +54,6 @@ function showNotes() {
 
 showNotes();
 
-// add note
 form.onsubmit = function (e) {
     e.preventDefault();
 
@@ -81,7 +76,6 @@ form.onsubmit = function (e) {
     form.reset();
 }
 
-// delete note
 function deleteNote(index) {
     let notes = getNotes();
     notes.splice(index, 1);
@@ -89,7 +83,6 @@ function deleteNote(index) {
     showNotes();
 }
 
-// edit note
 function editNote(index) {
     let notes = getNotes();
     let note = notes[index];
@@ -105,7 +98,6 @@ function editNote(index) {
     showNotes();
 }
 
-// search notes
 searchBar.oninput = function () {
     let value = searchBar.value.toLowerCase();
     let cards = document.querySelectorAll(".note-card");
