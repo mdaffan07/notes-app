@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <header class="app-header">
+            <h1>Notes App 🗒️</h1>
+            <input type="text" id="search-bar" placeholder="Search notes...">
+        </header>
+
+        <form class="note-form" id="note-form">
+            <input type="text" id="note-title" placeholder="Title" required>
+            <textarea id="note-text" placeholder="Take a note..." required></textarea>
+
+            <div class="form-footer">
+                <div class="color-labels">
+                    <span class="color-dot" style="background: #fff740;" data-color="#fff740"></span>
+                    <span class="color-dot" style="background: #a0e7e5;" data-color="#a0e7e5"></span>
+                    <span class="color-dot" style="background: #b4f8c8;" data-color="#b4f8c8"></span>
+                    <span class="color-dot" style="background: #fbe7c6;" data-color="#fbe7c6"></span>
+                    <span class="color-dot" style="background: #ffc0cb;" data-color="#ffc0cb"></span>
+                </div>
+                <button type="submit" class="btn-add">Add Note</button>
+            </div>
+        </form>
+
+        <main class="notes-grid" id="notes-grid">
+
+            <div class="note-card" style="background-color: #fff740;">
+                <h3>My First Note</h3>
+                <p>This is a sample note to show the card layout. JavaScript will be needed to add and delete these.</p>
+                <div class="card-footer">
+                    <small>Oct 24, 2025</small>
+                    <div class="card-actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-card" style="background-color: #a0e7e5;">
+                <h3>Shopping List</h3>
+                <p>
+                    - Milk
+                    - Eggs
+                    - Bread
+                </p>
+                <div class="card-footer">
+                    <small>Oct 23, 2025</small>
+                    <div class="card-actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-card" style="background-color: #b4f8c8;">
+                <h3>Project Idea</h3>
+                <p>Build a notes app with HTML, CSS, and JavaScript. Implement full CRUD functionality and a search bar.
+                </p>
+                <div class="card-footer">
+                    <small>Oct 22, 2025</small>
+                    <div class="card-actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
