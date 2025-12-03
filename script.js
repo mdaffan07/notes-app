@@ -3,8 +3,11 @@ const form = document.getElementById("note-form");
 const titleInput = document.getElementById("note-title");
 const textInput = document.getElementById("note-text");
 const searchBar = document.getElementById("search-bar");
+const button = document.querySelector(".btn-add");
 
 let selectedColor = "#fff740";
+
+button.innerHTML = "Save Notes";
 
 const dots = document.querySelectorAll(".color-dot");
 dots.forEach(function (dot) {
@@ -74,6 +77,8 @@ form.onsubmit = function (e) {
     saveNotes(notes);
     showNotes();
     form.reset();
+
+    button.innerHTML = "Save Notes";
 }
 
 function deleteNote(index) {
@@ -84,6 +89,7 @@ function deleteNote(index) {
 }
 
 function editNote(index) {
+    button.innerHTML = "Edit Notes";
     let notes = getNotes();
     let note = notes[index];
 
@@ -96,6 +102,7 @@ function editNote(index) {
     notes.splice(index, 1);
     saveNotes(notes);
     showNotes();
+    
 }
 
 searchBar.oninput = function () {
